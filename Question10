@@ -1,0 +1,6 @@
+// Attempt login
+userID = user.getUserId(username)
+
+if (inputPassword.equals(user.getPassword())) { 
+    // Login success
+}
