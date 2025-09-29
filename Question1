@@ -1,0 +1,10 @@
+app.get('/profile/:userId', (req, res) => {
+    User.findById(req.params.userId, (err, user) => {
+        if (err) return res.status(500).send(err);
+		if (user.hasRole("ADMIN")) {
+			return res.json(user);
+		} else {
+			return res.status(403).send(err);
+		}
+    });
+});
