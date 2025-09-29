@@ -1,0 +1,11 @@
+import requests
+
+whitelist = ["google.com", "facebook.com", "x.com"]
+
+url = input("Enter URL: ")
+if url in whitelist:
+    userInput = "https://www." + url
+    response = requests.get(userInput)
+    print(response.text)
+else:
+    print("URL rejected")
