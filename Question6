@@ -1,0 +1,9 @@
+app.get('/user', (err, results) => {
+	const query = 'SELECT * FROM users WHERE username = ?';
+	db.execute(query, [username], (err, res) => {
+		db.collection('users').findOne(username, (err, user) => {
+			if (err) throw err;
+			res.json(user);
+		});
+  });
+});
